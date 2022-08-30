@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    background-color: bisque;
+    font-family: sans-serif;
+    padding: 80px;
+    box-shadow: 10px 10px 20px;
+}
+
+.input{
+    width: 207px;
+}
+
+.submit{
+    margin-top: 45px;
+}

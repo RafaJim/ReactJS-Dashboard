@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import CreateReview from './modules/CreateReview';
+import ShowReviews from './modules/ShowReviews';
+import ShowAllReviews from './modules/ShowAllReviews';
+import GuardedRoute from './modules/GuardedRoute';
+import Login from './modules/Login';
 
 function App() {
+  const [isAutheticated, setIsAutheticated] = useState(localStorage.getItem('token'));
+
+  const auth = () => {
+    const token = localStorage.getItem('token');
+    setIsAutheticated(token);
+  }
+
+  // setTimeout(() => localStorage.clear, 10000);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={ <Login auth={ auth }/> } exact />
+        <Route element={<GuardedRoute isAutheticated={ isAutheticated } />}>
+          <Route path="/showAllReviews" element={ <ShowAllReviews/> } />
+          <Route path="/showReviews" element={ <ShowReviews/> } />
+          <Route path="/createReview" element={ <CreateReview/> } />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

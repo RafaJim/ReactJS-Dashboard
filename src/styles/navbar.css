@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.navbar{
+    color: white;
+    background-color: #20232a;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-header{
+    margin: 15px;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.nav-menu li{
+    display: flex;
+    margin-right: 15px;
+}
+
+.navLinks{
+    text-decoration: none;
+    color: #61dafb;
+    font-size: 20px;
+}
+
+.navLinks:hover{
+    zoom: 115%;
+}
+
+.btnLogin{
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+    color: #61dafb;
+    margin: 15px;
+}
+
+.btnLogin:hover{
+    zoom: 115%;
+}
